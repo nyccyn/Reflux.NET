@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Reflux.NET.Example.Controls.TodoItemControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="30">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <CheckBox x:Name="IsCompletedCheckBox" Click="IsCompletedCheckBox_Click" IsChecked="{Binding IsCompleted, Mode=OneWay}"/>
+        <TextBox Grid.Column="1" x:Name="LabelTextBox" TextChanged="LabelTextBox_OnTextChanged" Text="{Binding Label, Mode=OneWay}"/>
+        <Button Grid.Column="2" Click="ButtonRemove_OnClick">Remove</Button>
+    </Grid>
+</UserControl>
